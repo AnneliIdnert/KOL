@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">KOL-app</string>
+    <string name="welcome">Välkommen!</string>
+    <string name="firstname">Förnamn</string>
+    <string name="familyname">Efternamn</string>
+    <string name="dateOfBirth">Person nummer</string>
+    <string name="man">Man</string>
+    <string name="woman">Kvinna</string>
+    <string name="smoking">Röker</string>
+    <string name="save">SPAR!</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

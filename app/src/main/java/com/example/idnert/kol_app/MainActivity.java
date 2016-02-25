@@ -5,9 +5,16 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
+    private  Controller controller;
+    private LayoutPersonalPref layoutPersonalPref;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
+
+
 }
