@@ -110,4 +110,14 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inputExercis"
+        android:id="@+id/btnInputExercis"
+        android:layout_below="@+id/btnSavePersonalInfo"
+        android:layout_toEndOf="@+id/edPersonno"
+        android:layout_marginTop="5dp"
+        android:background="#43acf2" />
+
 </RelativeLayout>

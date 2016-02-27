@@ -8,7 +8,12 @@
     <string name="woman">Kvinna</string>
     <string name="smoking">Röker</string>
     <string name="save">SPAR!</string>
+    <string name="inputExercis">LÄGG IN ÖVNING!</string>
 
+
+
+    <string name="personalPref">Användar info</string>
+    <string name="exercisesInput">Träningsformulär</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
