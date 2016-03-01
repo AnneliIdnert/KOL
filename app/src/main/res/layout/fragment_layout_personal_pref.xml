@@ -79,25 +79,10 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/woman"
-        android:id="@+id/cBoxWoman"
-        android:layout_below="@+id/edPersonno" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/man"
-        android:id="@+id/cBoxMale"
-        android:layout_below="@+id/edPersonno"
-        android:layout_toEndOf="@+id/tvlastname" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/smoking"
         android:id="@+id/cBoxSmoking"
-        android:layout_below="@+id/cBoxWoman"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/edPersonno" />
 
     <Button
         android:layout_width="match_parent"
@@ -119,5 +104,22 @@
         android:layout_toEndOf="@+id/edPersonno"
         android:layout_marginTop="5dp"
         android:background="#43acf2" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/woman"
+        android:id="@+id/rndButtnFemale"
+        android:layout_above="@+id/btnSavePersonalInfo"
+        android:layout_alignEnd="@+id/edPersonno" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/man"
+        android:id="@+id/rndButtnMan"
+        android:layout_below="@+id/edPersonno"
+        android:layout_toEndOf="@+id/edPersonno"
+        android:enabled="true" />
 
 </RelativeLayout>

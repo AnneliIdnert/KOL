@@ -1,14 +1,15 @@
 package com.example.idnert.kol_app;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 
 public class LayoutPersonalPref extends Fragment {
@@ -17,9 +18,11 @@ public class LayoutPersonalPref extends Fragment {
     private Button save;
     private EditText firstName;
     private EditText lastName;
-    private CheckBox male;
-    private CheckBox female;
     private EditText personNo;
+    private CheckBox smoking;
+    private Button inputExercis;
+    private RadioButton man;
+    private RadioButton woman;
 
     public LayoutPersonalPref() {
         // Required empty public constructor
@@ -47,11 +50,15 @@ public class LayoutPersonalPref extends Fragment {
     private void initContent(View view) {
 
         save= (Button)view.findViewById(R.id.btnSavePersonalInfo);
+        save.setOnClickListener(new addPersonalPref());
+
         firstName=(EditText)view.findViewById(R.id.firstname);
         lastName=(EditText)view.findViewById(R.id.lastname);
         personNo=(EditText)view.findViewById(R.id.edPersonno);
-        male=(CheckBox)view.findViewById(R.id.cBoxMale);
-        female=(CheckBox)view.findViewById(R.id.cBoxWoman);
+        man=(RadioButton)view.findViewById(R.id.rndButtnMan);
+        woman=(RadioButton)view.findViewById(R.id.rndButtnFemale);
+        smoking=(CheckBox)view.findViewById(R.id.cBoxSmoking);
+
     }
 
 public  void setController(Controller controller){
@@ -59,4 +66,14 @@ public  void setController(Controller controller){
     this.controller = controller;
 }
 
+    private class addPersonalPref implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            String firstN = firstName.getText().toString();
+            String lastN = lastName.getText().toString();
+            String persNo = personNo.getText().toString();
+            
+
+        }
+    }
 }
