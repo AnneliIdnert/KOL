@@ -1,6 +1,8 @@
 package com.example.idnert.kol_app;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +12,9 @@ public class MainActivity extends Activity {
 
     private  Controller controller;
     private LayoutPersonalPref layoutPersonalPref;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
+    private LayoutPersonalPref fragment;
 
 
     @Override
@@ -18,9 +23,17 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         layoutPersonalPref = new LayoutPersonalPref();
-        controller = new Controller(layoutPersonalPref);
+        controller = new Controller(this, layoutPersonalPref);
 
+        fm = getFragmentManager();
+        ft = fm.beginTransaction();
+
+        if (savedInstanceState==null) {
+            setFragment(layoutPersonalPref);
+        }
     }
+
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -46,4 +59,12 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void setFragment(LayoutPersonalPref personalPref) {
+        ft = fm.beginTransaction();
+
+        ft.replace(R.id.content, personalPref);
+
+        ft.commit();
+
+    }
 }

@@ -26,13 +26,14 @@
         android:layout_marginTop="20dp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/firstname"
         android:layout_below="@+id/tvFirstname"
         android:layout_alignParentStart="true"
         android:hint="Skriv in förnamn"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/cBoxSmoking" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,13 +47,14 @@
         android:layout_marginTop="20dp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lastname"
         android:hint="Skriv in efternamn"
         android:layout_below="@+id/tvlastname"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/cBoxSmoking" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,8 +83,8 @@
         android:layout_height="wrap_content"
         android:text="@string/smoking"
         android:id="@+id/cBoxSmoking"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/edPersonno" />
+        android:layout_alignBottom="@+id/firstname"
+        android:layout_alignEnd="@+id/rndButtnMan" />
 
     <Button
         android:layout_width="match_parent"
@@ -91,35 +93,30 @@
         android:id="@+id/btnSavePersonalInfo"
         android:textColor="#151515"
         android:background="#a8e8e2"
-        android:layout_below="@+id/cBoxSmoking"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/edPersonno"
+        android:layout_alignEnd="@id/btnInputExercis"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/inputExercis"
-        android:id="@+id/btnInputExercis"
-        android:layout_below="@+id/btnSavePersonalInfo"
-        android:layout_toEndOf="@+id/edPersonno"
-        android:layout_marginTop="5dp"
-        android:background="#43acf2" />
+
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/woman"
         android:id="@+id/rndButtnFemale"
-        android:layout_above="@+id/btnSavePersonalInfo"
-        android:layout_alignEnd="@+id/edPersonno" />
+        android:checked="false"
+        android:layout_alignBottom="@+id/tvFirstname"
+        android:layout_alignEnd="@+id/firstname" />
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/man"
         android:id="@+id/rndButtnMan"
-        android:layout_below="@+id/edPersonno"
-        android:layout_toEndOf="@+id/edPersonno"
-        android:enabled="true" />
+        android:enabled="true"
+        android:layout_alignBottom="@+id/tvFirstname"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="33dp" />
 
 </RelativeLayout>
