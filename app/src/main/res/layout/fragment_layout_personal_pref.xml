@@ -95,7 +95,6 @@
         android:background="#a8e8e2"
         android:layout_marginTop="57dp"
         android:layout_below="@+id/edPersonno"
-        android:layout_alignEnd="@id/btnInputExercis"
         android:layout_alignParentStart="true" />
 
 

@@ -3,7 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/action_settings"
+        android:title="@+id/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+       />
+
+    <item android:id="@+id/action_exercis"
+        android:title="@string/exercisesInput"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_personalPref"
         android:title="@string/personalPref"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
+
+
 </menu>

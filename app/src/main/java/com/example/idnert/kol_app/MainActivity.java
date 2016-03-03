@@ -14,8 +14,7 @@ public class MainActivity extends Activity {
     private LayoutPersonalPref layoutPersonalPref;
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private LayoutPersonalPref fragment;
-
+    private AddExercis addExercis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +22,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         layoutPersonalPref = new LayoutPersonalPref();
-        controller = new Controller(this, layoutPersonalPref);
+        controller = new Controller(this, layoutPersonalPref, addExercis);
 
         fm = getFragmentManager();
         ft = fm.beginTransaction();
 
-        if (savedInstanceState==null) {
+       if (savedInstanceState==null) {
             setFragment(layoutPersonalPref);
         }
     }
@@ -46,15 +45,26 @@ public class MainActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+       switch (item.getItemId()){
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent refresh= new Intent(this, MainActivity.class);
-            startActivity(refresh);
-            this.finish();
-            return true;
+           case  R.id.action_settings:
+               Intent refresh= new Intent(this, MainActivity.class);
+               startActivity(refresh);
+               this.finish();
+               return true;
+           case R.id.action_exercis:
+               Intent exercis = new Intent(this, AddExercis.class);
+               startActivity(exercis);
+               return true;
+           case R.id.action_personalPref:
+               Intent personalPref = new Intent(this, LayoutPersonalPref.class);
+               startActivity(personalPref);
+               return true;
+
         }
+
+
+
 
         return super.onOptionsItemSelected(item);
     }
