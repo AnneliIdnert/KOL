@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         layoutPersonalPref = new LayoutPersonalPref();
+        addExercis = new AddExercis();
         controller = new Controller(this, layoutPersonalPref, addExercis);
 
         fm = getFragmentManager();
@@ -60,6 +61,7 @@ public class MainActivity extends Activity {
                Intent personalPref = new Intent(this, LayoutPersonalPref.class);
                startActivity(personalPref);
                return true;
+           
 
         }
 

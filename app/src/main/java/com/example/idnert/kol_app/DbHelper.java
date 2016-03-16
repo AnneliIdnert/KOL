@@ -12,7 +12,7 @@ import android.util.Log;
 public class DbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "EXERCIS";
-    public static final int DATABASE_VER = 1;
+    public static final int DATABASE_VER = 3;
 
     public static final String TABLE_NAME = "PERSONAL_PREF";
     public static final String COLUMN_FIRST = "FIRSTNAME";
@@ -24,13 +24,24 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_TWO = "EXERCIS";
     public static final String COLUMN_HEADER = "HEADER";
     public static final String COLUMN_DESCRIPTION = "DESCRIPTION";
+    public static final String COLUMN_TIME = "TIME";
+    public static final String COLUMN_REPETITION = "REPETITIONS";
+    public static final String COLUMN_CATEGORY = "CATEGORY";
+    public static final String COLUMN_ID = "_id";
 
 
+
+    public static final String TABLE_NAME_THREE = "STATISTIC";
+    public static final String COLUMN_STATUS = "FEELING";
+    public static final String COLUMN_EXERCIS= "DONE";
+    public static final String COLUMN_DATE = "DATE";
+    public static final String ID = "ID";
 
     public static final String CREATE_QUERY="CREATE TABLE "+TABLE_NAME+"("+COLUMN_FIRST+" text, "+COLUMN_LAST+" text, "+COLUMN_PERSNUMBER+" text, "+COLUMN_SEX+" text, "+COLUMN_HABITS+" text);";
 
-    public static final String CREATE_QUERY_EXERCIS="CREATE TABLE "+TABLE_NAME_TWO+"("+COLUMN_HEADER+" text, "+COLUMN_DESCRIPTION+" text);";
+    public static final String CREATE_QUERY_EXERCIS="CREATE TABLE "+TABLE_NAME_TWO+"("+COLUMN_ID+"_id INTEGER PRIMARY KEY AUTOINCREMENT," +COLUMN_HEADER+" text, "+COLUMN_DESCRIPTION+" text, "+COLUMN_REPETITION+" text, "+COLUMN_CATEGORY+" text, "+COLUMN_TIME+" text);";
 
+    public static final String CREATE_QUERY_STATESTIC="CREATE TABLE "+TABLE_NAME_THREE+"("+ID+"_id INTEGER PRIMARY KEY AUTOINCREMENT, FOREIGN KEY("+COLUMN_EXERCIS+") REFERENCES "+TABLE_NAME_TWO+("_id")+COLUMN_STATUS+" text, "+COLUMN_DATE+" text);";
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VER);
@@ -42,6 +53,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_QUERY);                                  // Creating the database table
         db.execSQL(CREATE_QUERY_EXERCIS);
+        db.execSQL(CREATE_QUERY_STATESTIC);
 
         Log.d("Table is created", "table done");
     }
@@ -65,6 +77,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " +TABLE_NAME_TWO);
+        db.execSQL("DROP TABLE IF EXISTS " +TABLE_NAME_THREE);
         db.execSQL("DROP TABLE IF EXISTS " +TABLE_NAME);
         onCreate(db);
     }

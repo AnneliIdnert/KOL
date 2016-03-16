@@ -98,15 +98,12 @@
         android:layout_alignParentStart="true" />
 
 
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/radioGroup">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/woman"
-        android:id="@+id/rndButtnFemale"
-        android:checked="false"
-        android:layout_alignBottom="@+id/tvFirstname"
-        android:layout_alignEnd="@+id/firstname" />
+</RadioGroup>
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -114,8 +111,16 @@
         android:text="@string/man"
         android:id="@+id/rndButtnMan"
         android:enabled="true"
-        android:layout_alignBottom="@+id/tvFirstname"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="33dp" />
+        android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/rndButtnFemale" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/woman"
+        android:id="@+id/rndButtnFemale"
+        android:checked="false"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

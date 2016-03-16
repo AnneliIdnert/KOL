@@ -52,9 +52,11 @@ public class LayoutPersonalPref extends Fragment {
         man=(RadioButton)view.findViewById(R.id.rndButtnMan);
         woman=(RadioButton)view.findViewById(R.id.rndButtnFemale);
         smoking=(CheckBox)view.findViewById(R.id.cBoxSmoking);
-
         return view;
     }
+
+
+
 
 
     public void setController(Controller controller){this.controller = controller;}

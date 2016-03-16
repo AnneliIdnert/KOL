@@ -19,16 +19,21 @@ public class Controller {
         dbHelper = new DbHelper(this.mainActivity);
 
         this.layoutPersonalPref.setController(this);
-       // this.addExercis.setController(this);
+        this.addExercis.setController(this);
 
     }
 
     public void data(String firstName, String lastName, String persoNo, String sex, String habit) {
 
         DbHelper dbHelper = new DbHelper(mainActivity);
-        dbHelper.insertPersonalPref(firstName, lastName, persoNo,sex, habit );
+        dbHelper.insertPersonalPref(firstName, lastName, persoNo, sex, habit);
 
     }
 
     public void setMainActivity(){mainActivity.setFragment(layoutPersonalPref);}
+
+    public void dataExercisInstruction(String category, String header, String repetition, String time, String instruction) {
+        DbHelper dbhelper = new DbHelper(mainActivity);
+
+    }
 }
