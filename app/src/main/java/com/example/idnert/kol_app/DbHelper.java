@@ -33,15 +33,15 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME_THREE = "STATISTIC";
     public static final String COLUMN_STATUS = "FEELING";
-    public static final String COLUMN_EXERCIS= "DONE";
     public static final String COLUMN_DATE = "DATE";
-    public static final String ID = "ID";
+    public static final String COLUMN_DONE = "DONE";
+    public static final String ID = "_id";
 
     public static final String CREATE_QUERY="CREATE TABLE "+TABLE_NAME+"("+COLUMN_FIRST+" text, "+COLUMN_LAST+" text, "+COLUMN_PERSNUMBER+" text, "+COLUMN_SEX+" text, "+COLUMN_HABITS+" text);";
 
     public static final String CREATE_QUERY_EXERCIS="CREATE TABLE "+TABLE_NAME_TWO+"("+COLUMN_ID+"_id INTEGER PRIMARY KEY AUTOINCREMENT," +COLUMN_HEADER+" text, "+COLUMN_DESCRIPTION+" text, "+COLUMN_REPETITION+" text, "+COLUMN_CATEGORY+" text, "+COLUMN_TIME+" text);";
 
-    public static final String CREATE_QUERY_STATESTIC="CREATE TABLE "+TABLE_NAME_THREE+"("+ID+"_id INTEGER PRIMARY KEY AUTOINCREMENT, FOREIGN KEY("+COLUMN_EXERCIS+") REFERENCES "+TABLE_NAME_TWO+("_id")+COLUMN_STATUS+" text, "+COLUMN_DATE+" text);";
+    public static final String CREATE_QUERY_STATESTIC="CREATE TABLE "+TABLE_NAME_THREE+"(" +ID+"_id INTEGER PRIMARY KEY AUTOINCREMENT, "+COLUMN_STATUS+" text, "+COLUMN_DATE+" text, "+COLUMN_DONE+" INTEGER, FOREIGN KEY("+COLUMN_DONE+") REFERENCES TABLE_NAME_TWO(_id));";
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VER);
