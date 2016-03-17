@@ -1,5 +1,7 @@
 package com.example.idnert.kol_app;
 
+import android.content.Context;
+
 /**
  * Created by idnert on 2016-02-25.
  */
@@ -9,7 +11,6 @@ public class Controller {
     private LayoutPersonalPref layoutPersonalPref;
     private DbHelper dbHelper;
     private AddExercis addExercis;
-
 
     public Controller(MainActivity mainActivity, LayoutPersonalPref layoutPersonalPref, AddExercis addExercis) {
         this.layoutPersonalPref = layoutPersonalPref;

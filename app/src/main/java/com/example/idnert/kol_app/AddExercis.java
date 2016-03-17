@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,8 @@ public class AddExercis extends Activity {
     private Button save;
     private Button finsch;
 
+    private static final String TAG = "AddExercise";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class AddExercis extends Activity {
         setContentView(R.layout.activity_add__exercis);
 
         mySpinner = (Spinner)findViewById(R.id.chooseCategory);
-        choice = (EditText)mySpinner.getSelectedView();
+        //choice = (EditText)mySpinner.getSelectedItem();
         header = (EditText)findViewById(R.id.edHeader);
         howMany = (EditText)findViewById(R.id.edRepitions);
         time = (EditText)findViewById(R.id.edTime);
@@ -87,11 +90,16 @@ public class AddExercis extends Activity {
         @Override
         public void onClick(View v) {
 
-            String text = choice.getText().toString();
+            String text = mySpinner.getSelectedItem().toString();
             String inputHeader = header.getText().toString();
             String repetition = howMany.getText().toString();
             String getTime = time.getText().toString();
             String getInstruction = instruction.getText().toString();
+            Log.i(TAG, "text: " + text);
+            Log.i(TAG, "header: " + inputHeader);
+            Log.i(TAG, "repetition: " + repetition);
+            Log.i(TAG, "time: " + getTime);
+            Log.i(TAG, "instruction: " + getInstruction);
             controller.dataExercisInstruction(text, inputHeader, repetition, getTime, getInstruction);
             Context context = getApplicationContext();
             Toast.makeText(getActivity(),
