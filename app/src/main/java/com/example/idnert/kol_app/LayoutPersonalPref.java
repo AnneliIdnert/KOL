@@ -2,6 +2,7 @@ package com.example.idnert.kol_app;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -70,7 +71,9 @@ public class LayoutPersonalPref extends Fragment {
             String sex= checkSex();
             String habit=smokingHabits();
             Log.d("AI", controller.toString());
-            controller.data(firstN,lastN,persNo,sex,habit);
+            controller.data(firstN, lastN, persNo, sex, habit);
+            Intent intent = new Intent(getActivity(), AddExercis.class);
+            startActivity(intent);
 
         }
         private String checkSex(){

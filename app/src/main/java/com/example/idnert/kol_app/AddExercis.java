@@ -15,8 +15,10 @@ import android.widget.Toast;
 public class AddExercis extends Activity {
 
     private Controller controller;
+    private KOL_Exercis kol_exercis;
     private MainActivity mainActivity;
-    private Spinner choice;
+    private Spinner mySpinner;
+    private EditText choice;
     private EditText header;
     private EditText howMany;
     private EditText time;
@@ -24,12 +26,14 @@ public class AddExercis extends Activity {
     private Button save;
     private Button finsch;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__exercis);
 
-        choice = (Spinner)findViewById(R.id.chooseCategory);
+        mySpinner = (Spinner)findViewById(R.id.chooseCategory);
+        choice = (EditText)mySpinner.getSelectedView();
         header = (EditText)findViewById(R.id.edHeader);
         howMany = (EditText)findViewById(R.id.edRepitions);
         time = (EditText)findViewById(R.id.edTime);
@@ -37,6 +41,7 @@ public class AddExercis extends Activity {
         save = (Button)findViewById(R.id.btnSave);
         save.setOnClickListener(new addExercis());
         finsch = (Button)findViewById(R.id.btnFinish);
+        finsch.setOnClickListener(new done());
     }
 
 
@@ -81,7 +86,8 @@ public class AddExercis extends Activity {
 
         @Override
         public void onClick(View v) {
-            String text = choice.getSelectedItem().toString();
+
+            String text = choice.getText().toString();
             String inputHeader = header.getText().toString();
             String repetition = howMany.getText().toString();
             String getTime = time.getText().toString();
@@ -94,6 +100,15 @@ public class AddExercis extends Activity {
 
         public Context getActivity() {
             return activity;
+        }
+    }
+
+    private class done implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            //Intent intent = new Intent(this, kol_exercis.class);
+          //  startActivity(intent);
         }
     }
 }

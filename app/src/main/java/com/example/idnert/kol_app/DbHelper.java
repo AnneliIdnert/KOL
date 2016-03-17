@@ -71,7 +71,19 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, contentValues);
         Log.d("AI", db.toString());
     }
+    public void exercis(String category, String header, String repitition, String time, String description){
 
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_FIRST, header);
+        contentValues.put(COLUMN_LAST, description);
+        contentValues.put(COLUMN_PERSNUMBER, repitition);
+        contentValues.put(COLUMN_SEX, category);
+        contentValues.put(COLUMN_HABITS, time);
+
+        db.insert(TABLE_NAME, null, contentValues);
+        Log.d("AI", db.toString());
+    }
 
 
     @Override
