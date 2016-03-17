@@ -34,6 +34,6 @@ public class Controller {
 
     public void dataExercisInstruction(String category, String header, String repetition, String time, String instruction) {
         DbHelper dbhelper = new DbHelper(mainActivity);
-
+        dbhelper.exercis(category, header, repetition, time, instruction);
     }
 }
