@@ -26,9 +26,10 @@
             android:name=".AddExercis"
             android:label="@string/title_activity_add__exercis" >
         </activity>
-        <activity android:name=".KOL_Exercis" >
+        <activity android:name=".CardViewActivity" >
         </activity>
-        <activity android:name=".RecyclerViewActivity" >
+        <activity android:name=".RecyclerViewActivity"
+                  android:label="@string/showExercis">
         </activity>
     </application>
 

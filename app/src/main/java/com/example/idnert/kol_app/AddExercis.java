@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 public class AddExercis extends Activity {
 
-    private Controller controller;
-    private KOL_Exercis kol_exercis;
-    private MainActivity mainActivity;
+     Controller controller;
+     CardViewActivity kol_exercis;
+     MainActivity mainActivity;
     private Spinner mySpinner;
     private EditText choice;
     private EditText header;
@@ -28,7 +28,7 @@ public class AddExercis extends Activity {
     private Button finsch;
 
     private static final String TAG = "AddExercise";
-
+    public void setController(Controller controller) {this.controller = controller;}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,8 @@ public class AddExercis extends Activity {
         save.setOnClickListener(new addExercis());
         finsch = (Button)findViewById(R.id.btnFinish);
         finsch.setOnClickListener(new done());
+
+
     }
 
 
@@ -79,9 +81,7 @@ public class AddExercis extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setController(Controller controller) {
-        this.controller = controller;
-    }
+
 
 
     private class addExercis implements View.OnClickListener {

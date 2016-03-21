@@ -12,7 +12,7 @@ import android.util.Log;
 public class DbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "EXERCIS";
-    public static final int DATABASE_VER = 3;
+    public static final int DATABASE_VER = 4;
 
     public static final String TABLE_NAME = "PERSONAL_PREF";
     public static final String COLUMN_FIRST = "FIRSTNAME";
@@ -48,6 +48,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         Log.d("DatabaseOperation", "Database is open...");
     }
+
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {

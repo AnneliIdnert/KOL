@@ -21,6 +21,7 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_add__exercis">Lägg till övning!</string>
+    <string name="showExercis">Visa träningen</string>
     <string name="inputHeader">Skriv in rubrik</string>
     <string name="categoryHeader">Välj kategori</string>
 </resources>

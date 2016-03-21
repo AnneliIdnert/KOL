@@ -2,25 +2,34 @@ package com.example.idnert.kol_app;
 
 import android.content.Context;
 
+import java.util.LinkedList;
+
 /**
  * Created by idnert on 2016-02-25.
  */
 public class Controller {
 
-    private MainActivity mainActivity;
-    private LayoutPersonalPref layoutPersonalPref;
-    private DbHelper dbHelper;
-    private AddExercis addExercis;
+     MainActivity mainActivity;
+     LayoutPersonalPref layoutPersonalPref;
+     DbHelper dbHelper;
+     AddExercis addExercis;
+     LinkedList<Exercis> showExcerises;
 
+    public Controller(Context context) {
+
+        dbHelper = new DbHelper(context);
+    }
     public Controller(MainActivity mainActivity, LayoutPersonalPref layoutPersonalPref, AddExercis addExercis) {
         this.layoutPersonalPref = layoutPersonalPref;
         this.mainActivity = mainActivity;
         this.addExercis = addExercis;
 
-        dbHelper = new DbHelper(this.mainActivity);
+
+        dbHelper = new DbHelper(mainActivity);
 
         this.layoutPersonalPref.setController(this);
         this.addExercis.setController(this);
+
 
     }
 

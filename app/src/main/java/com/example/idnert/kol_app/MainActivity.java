@@ -10,11 +10,12 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity {
 
-    private  Controller controller;
-    private LayoutPersonalPref layoutPersonalPref;
-    private FragmentManager fm;
-    private FragmentTransaction ft;
-    private AddExercis addExercis;
+     Controller controller;
+     LayoutPersonalPref layoutPersonalPref;
+     FragmentManager fm;
+     FragmentTransaction ft;
+     AddExercis addExercis;
+     DbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends Activity {
 
         layoutPersonalPref = new LayoutPersonalPref();
         addExercis = new AddExercis();
+
         controller = new Controller(this, layoutPersonalPref, addExercis);
 
         fm = getFragmentManager();
@@ -60,6 +62,10 @@ public class MainActivity extends Activity {
            case R.id.action_personalPref:
                Intent personalPref = new Intent(this, LayoutPersonalPref.class);
                startActivity(personalPref);
+               return true;
+           case R.id.action_listOfExercis:
+               Intent listOfExercis = new Intent(this, RecyclerViewActivity.class);
+               startActivity(listOfExercis);
                return true;
            
 
