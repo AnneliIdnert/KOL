@@ -4,6 +4,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/exercis_holder"
+
         >
 
         <RelativeLayout
@@ -29,6 +30,7 @@
                 android:layout_alignParentTop="true"
                 android:textColor="@color/background_floating_material_dark"
                 android:textSize="20sp"
+                android:clickable="true"
                 />
 
             <TextView

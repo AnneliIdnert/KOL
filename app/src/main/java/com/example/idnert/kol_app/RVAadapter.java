@@ -1,5 +1,7 @@
 package com.example.idnert.kol_app;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,21 +17,32 @@ import java.util.List;
  */
 public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
 
-    public static class ExercisHolder extends RecyclerView.ViewHolder{
+    public static class ExercisHolder extends RecyclerView.ViewHolder {
 
-        CardView cardView;
-        TextView header;
-        TextView text;
-        ImageView image;
+        private   CardView cardView;
+        private   TextView header;
+        private   TextView text;
+        private   ImageView image;
+        private   Exercis_details exercis_details;
+        private   Context context;
 
-        ExercisHolder(View itemView){
+        ExercisHolder(final View itemView){
             super(itemView);
             cardView = (CardView)itemView.findViewById(R.id.exercis_holder);
             header = (TextView)itemView.findViewById(R.id.exercis_header);
             text = (TextView)itemView.findViewById(R.id.description);
             image = (ImageView)itemView.findViewById(R.id.exercis_image);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemView.getContext().startActivity(new Intent(itemView.getContext(), Exercis_details.class));
+                }
+            });
         }
+
+
+
     }
     List<Exercis> exercises;
     RVAadapter(List<Exercis> exercises){this.exercises = exercises;}
@@ -42,14 +55,16 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
     public ExercisHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_kol__exercis, viewGroup, false);
         ExercisHolder pvh = new ExercisHolder(v);
+
         return pvh;
     }
 
+
     @Override
     public void onBindViewHolder(ExercisHolder exercisHolder, int i) {
-        exercisHolder.header.setText(exercises.get(i).header);
-        exercisHolder.text.setText(exercises.get(i).description);
-        exercisHolder.image.setImageResource(exercises.get(i).image);
+        exercisHolder.header.setText(exercises.get(i).getHeader());
+        exercisHolder.text.setText(exercises.get(i).getDescription());
+        exercisHolder.image.setImageResource(exercises.get(i).getImage());
 
     }
 
