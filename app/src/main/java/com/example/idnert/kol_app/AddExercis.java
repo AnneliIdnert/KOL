@@ -16,8 +16,8 @@ import android.widget.Toast;
 public class AddExercis extends Activity {
 
      Controller controller;
-     CardViewActivity kol_exercis;
-     MainActivity mainActivity;
+    CardViewActivity kol_exercis;
+    MainActivity mainActivity;
     private Spinner mySpinner;
     private EditText choice;
     private EditText header;
@@ -25,7 +25,7 @@ public class AddExercis extends Activity {
     private EditText time;
     private EditText instruction;
     private Button save;
-    private Button finsch;
+    private Button finish;
 
     private static final String TAG = "AddExercise";
     public void setController(Controller controller) {this.controller = controller;}
@@ -43,17 +43,14 @@ public class AddExercis extends Activity {
         instruction = (EditText)findViewById(R.id.edInstruction);
         save = (Button)findViewById(R.id.btnSave);
         save.setOnClickListener(new addExercis());
-        finsch = (Button)findViewById(R.id.btnFinish);
-        finsch.setOnClickListener(new done());
-
-
+        finish = (Button)findViewById(R.id.btnFinish);
+        finish.setOnClickListener(new done());
     }
 
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-
         return true;
     }
 
@@ -62,10 +59,7 @@ public class AddExercis extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-
-
-        switch (item.getItemId()){
-
+        switch (item.getItemId()) {
             case  R.id.action_settings:
                 Intent refresh= new Intent(this, MainActivity.class);
                 startActivity(refresh);
@@ -75,35 +69,31 @@ public class AddExercis extends Activity {
                 Intent exercis = new Intent(this, AddExercis.class);
                 startActivity(exercis);
                 return true;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
     private class addExercis implements View.OnClickListener {
         private Context activity;
 
         @Override
         public void onClick(View v) {
-
             String text = mySpinner.getSelectedItem().toString();
             String inputHeader = header.getText().toString();
             String repetition = howMany.getText().toString();
             String getTime = time.getText().toString();
             String getInstruction = instruction.getText().toString();
+
             Log.i(TAG, "text: " + text);
             Log.i(TAG, "header: " + inputHeader);
             Log.i(TAG, "repetition: " + repetition);
             Log.i(TAG, "time: " + getTime);
             Log.i(TAG, "instruction: " + getInstruction);
+
             controller.dataExercisInstruction(text, inputHeader, repetition, getTime, getInstruction);
             Context context = getApplicationContext();
             Toast.makeText(getActivity(),
-                    "Tack, om du vill lägga in en ny övning så går det bra! annars klicka på klar!", Toast.LENGTH_LONG).show();
+                    "Tack, om du vill lägga in en ny övning så går det bra! Annars klicka på klar!", Toast.LENGTH_LONG).show();
         }
 
         public Context getActivity() {
@@ -112,7 +102,6 @@ public class AddExercis extends Activity {
     }
 
     private class done implements View.OnClickListener {
-
         @Override
         public void onClick(View v) {
             //Intent intent = new Intent(this, kol_exercis.class);

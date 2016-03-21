@@ -18,7 +18,6 @@ import java.util.List;
 public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
 
     public static class ExercisHolder extends RecyclerView.ViewHolder {
-
         private   CardView cardView;
         private   TextView header;
         private   TextView text;
@@ -26,7 +25,7 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
         private   Exercis_details exercis_details;
         private   Context context;
 
-        ExercisHolder(final View itemView){
+        ExercisHolder(final View itemView) {
             super(itemView);
             cardView = (CardView)itemView.findViewById(R.id.exercis_holder);
             header = (TextView)itemView.findViewById(R.id.exercis_header);
@@ -40,37 +39,34 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
                 }
             });
         }
-
-
-
     }
+
     List<Exercis> exercises;
-    RVAadapter(List<Exercis> exercises){this.exercises = exercises;}
+    RVAadapter(List<Exercis> exercises) {
+        this.exercises = exercises;
+    }
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
     @Override
     public ExercisHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_kol__exercis, viewGroup, false);
         ExercisHolder pvh = new ExercisHolder(v);
-
         return pvh;
     }
-
 
     @Override
     public void onBindViewHolder(ExercisHolder exercisHolder, int i) {
         exercisHolder.header.setText(exercises.get(i).getHeader());
         exercisHolder.text.setText(exercises.get(i).getDescription());
         exercisHolder.image.setImageResource(exercises.get(i).getImage());
-
     }
 
     @Override
     public int getItemCount() {
         return exercises.size();
     }
-
 }

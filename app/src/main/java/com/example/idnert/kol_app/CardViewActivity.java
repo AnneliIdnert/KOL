@@ -9,7 +9,7 @@ public class CardViewActivity extends Activity {
 
     private TextView header;
     private TextView description;
-   private   ImageView image;
+    private   ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,5 @@ public class CardViewActivity extends Activity {
         header.setText("TA EN PROMIS");
         description.setText("När du tar en promenad kan du lyssna till allt ljud runt dig...");
         image.setImageResource(R.drawable.walk);
-
     }
-
 }

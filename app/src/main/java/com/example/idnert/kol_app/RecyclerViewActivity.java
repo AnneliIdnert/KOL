@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewActivity extends Activity {
-
      List<Exercis> exercises;
      RecyclerView rv;
 
@@ -19,14 +18,13 @@ public class RecyclerViewActivity extends Activity {
 
         setContentView(R.layout.activity_recycler_view);
 
-       rv=(RecyclerView)findViewById(R.id.rv);
+        rv=(RecyclerView)findViewById(R.id.rv);
         LinearLayoutManager llm= new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
         initializeData();
         initializeAdapter();
-
     }
 
     private void initializeData() {
@@ -39,6 +37,5 @@ public class RecyclerViewActivity extends Activity {
     private void initializeAdapter() {
         RVAadapter adapter = new RVAadapter(exercises);
         rv.setAdapter(adapter);
-        
     }
 }

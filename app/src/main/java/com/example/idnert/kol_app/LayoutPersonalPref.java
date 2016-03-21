@@ -14,7 +14,6 @@ import android.widget.RadioButton;
 
 
 public class LayoutPersonalPref extends Fragment {
-
     private Controller controller;
     private Button save;
     private EditText firstName;
@@ -55,11 +54,9 @@ public class LayoutPersonalPref extends Fragment {
         return view;
     }
 
-
-
-
-
-    public void setController(Controller controller){this.controller = controller;}
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
 
     private class addPersonalPref implements View.OnClickListener {
         @Override
@@ -69,30 +66,28 @@ public class LayoutPersonalPref extends Fragment {
             String persNo = personNo.getText().toString();
             String sex= checkSex();
             String habit=smokingHabits();
-//            Log.d("AI", controller.toString());
+//          Log.d("AI", controller.toString());
             controller.data(firstN, lastN, persNo, sex, habit);
             Intent intent = new Intent(getActivity(), AddExercis.class);
             startActivity(intent);
-
         }
-        private String checkSex(){
 
-            if(woman.isChecked()){
-
+        private String checkSex() {
+            if(woman.isChecked()) {
                 return "Kvinna";
-            }else if(man.isChecked()){
+            } else if(man.isChecked()) {
             return "Man";
             }
+
             return "NA";
         }
     }
-    private String smokingHabits() {
 
+    private String smokingHabits() {
         if (smoking.isChecked()) {
             return "Röker";
         }
-            return "Röker ej";
+
+        return "Röker ej";
     }
-
-
 }

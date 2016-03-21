@@ -29,8 +29,6 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_CATEGORY = "CATEGORY";
     public static final String COLUMN_ID = "_id";
 
-
-
     public static final String TABLE_NAME_THREE = "STATISTIC";
     public static final String COLUMN_STATUS = "FEELING";
     public static final String COLUMN_DATE = "DATE";
@@ -49,8 +47,6 @@ public class DbHelper extends SQLiteOpenHelper {
         Log.d("DatabaseOperation", "Database is open...");
     }
 
-
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_QUERY);                                  // Creating the database table
@@ -60,8 +56,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Log.d("Table is created", "table done");
     }
 
-    public void insertPersonalPref(String firstName, String lastName, String persNo, String sex, String habit){
-
+    public void insertPersonalPref(String firstName, String lastName, String persNo, String sex, String habit) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_FIRST, firstName);
@@ -73,7 +68,8 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, contentValues);
         Log.d("AI", db.toString());
     }
-    public void exercis(String category, String header, String repetition, String time, String instruction){
+
+    public void exercis(String category, String header, String repetition, String time, String instruction) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -86,7 +82,6 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, contentValues);
         Log.d("AI", db.toString());
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

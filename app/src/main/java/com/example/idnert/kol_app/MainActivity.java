@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends Activity {
-
     private Controller controller;
     private LayoutPersonalPref layoutPersonalPref;
     private FragmentManager fm;
@@ -17,7 +16,6 @@ public class MainActivity extends Activity {
     private AddExercis addExercis;
     private DbHelper dbHelper;
     private Exercis_details exercis_details;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +32,12 @@ public class MainActivity extends Activity {
         ft = fm.beginTransaction();
 
        if (savedInstanceState==null) {
-            setFragment(layoutPersonalPref);
+           setFragment(layoutPersonalPref);
         }
     }
 
-
-
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-
         return true;
     }
 
@@ -51,8 +46,7 @@ public class MainActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-       switch (item.getItemId()){
-
+       switch (item.getItemId()) {
            case  R.id.action_settings:
                Intent refresh= new Intent(this, MainActivity.class);
                startActivity(refresh);
@@ -70,22 +64,14 @@ public class MainActivity extends Activity {
                Intent listOfExercis = new Intent(this, RecyclerViewActivity.class);
                startActivity(listOfExercis);
                return true;
-           
-
         }
-
-
-
 
         return super.onOptionsItemSelected(item);
     }
 
     public void setFragment(LayoutPersonalPref personalPref) {
         ft = fm.beginTransaction();
-
         ft.replace(R.id.content, personalPref);
-
         ft.commit();
-
     }
 }
