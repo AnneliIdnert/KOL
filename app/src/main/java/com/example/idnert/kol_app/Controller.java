@@ -10,28 +10,34 @@ import java.util.LinkedList;
 public class Controller {
 
      MainActivity mainActivity;
-     LayoutPersonalPref layoutPersonalPref;
-     DbHelper dbHelper;
-     AddExercis addExercis;
-     LinkedList<Exercis> showExcerises;
+    private LayoutPersonalPref layoutPersonalPref;
+    private DbHelper dbHelper;
+    private AddExercis addExercis;
+    private LinkedList<Exercis> showExcerises;
+    private Exercis_details exercis_details;
 
     public Controller(Context context) {
 
         dbHelper = new DbHelper(context);
     }
-    public Controller(MainActivity mainActivity, LayoutPersonalPref layoutPersonalPref, AddExercis addExercis) {
+    public Controller(MainActivity mainActivity, LayoutPersonalPref layoutPersonalPref, AddExercis addExercis, Exercis_details exercis_details) {
         this.layoutPersonalPref = layoutPersonalPref;
         this.mainActivity = mainActivity;
         this.addExercis = addExercis;
+        this.exercis_details = exercis_details;
+
 
 
         dbHelper = new DbHelper(mainActivity);
 
         this.layoutPersonalPref.setController(this);
         this.addExercis.setController(this);
+        this.exercis_details.setController(this);
+
 
 
     }
+
 
     public void data(String firstName, String lastName, String persoNo, String sex, String habit) {
 

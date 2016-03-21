@@ -10,12 +10,14 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity {
 
-     Controller controller;
-     LayoutPersonalPref layoutPersonalPref;
-     FragmentManager fm;
-     FragmentTransaction ft;
-     AddExercis addExercis;
-     DbHelper dbHelper;
+    private Controller controller;
+    private LayoutPersonalPref layoutPersonalPref;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
+    private AddExercis addExercis;
+    private DbHelper dbHelper;
+    private Exercis_details exercis_details;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,9 @@ public class MainActivity extends Activity {
 
         layoutPersonalPref = new LayoutPersonalPref();
         addExercis = new AddExercis();
+        exercis_details = new Exercis_details();
 
-        controller = new Controller(this, layoutPersonalPref, addExercis);
+        controller = new Controller(this, layoutPersonalPref, addExercis,exercis_details );
 
         fm = getFragmentManager();
         ft = fm.beginTransaction();

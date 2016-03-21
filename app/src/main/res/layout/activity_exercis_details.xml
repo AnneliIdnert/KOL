@@ -10,13 +10,58 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exercis_header"
+            android:textSize="30sp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/exercis_image"
-            android:layout_alignParentCenter="true"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/exercis_header"
             android:layout_marginRight="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exercis_decription"
+            android:layout_below="@+id/exercis_image"
+            android:layout_marginRight="16dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMusic"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/exercis_decription"
+            android:text="Sätt på musik!"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exercis_time"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/exercis_decription"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginRight="20dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTime"
+            android:layout_alignRight="@+id/exercis_time"
+            android:text="Starta tid!"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFinish"
+            android:text="Klar"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btnMusic"
+            android:layout_marginBottom="43dp" />
+
     </RelativeLayout>
 
 </LinearLayout>

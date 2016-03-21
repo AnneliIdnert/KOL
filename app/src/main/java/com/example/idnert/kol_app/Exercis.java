@@ -4,12 +4,13 @@ package com.example.idnert.kol_app;
  * Created by idnert on 2016-03-17.
  */
 public class Exercis {
-   private  String category;
-   private   String header;
-   private   String description;
-   private   String time;
-   private   String repetition;
-   private   int image;
+    private Controller controller;
+    private   String category;
+    private   String header;
+    private   String description;
+    private   String time;
+    private   String repetition;
+    private   int image;
 
     Exercis(String category,String header, String description, int image, String time, String repetition){
 
