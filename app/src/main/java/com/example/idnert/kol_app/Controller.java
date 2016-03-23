@@ -1,6 +1,7 @@
 package com.example.idnert.kol_app;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.LinkedList;
 
@@ -11,7 +12,7 @@ public class Controller {
     MainActivity mainActivity;
     private LayoutPersonalPref layoutPersonalPref;
     private DbHelper dbHelper;
-    private AddExercis addExercis;
+     AddExercis addExercis;
     private LinkedList<Exercis> showExcerises;
     private Exercis_details exercis_details;
 
@@ -26,6 +27,7 @@ public class Controller {
         this.exercis_details = exercis_details;
 
         dbHelper = new DbHelper(mainActivity);
+        dbHelper = new DbHelper(addExercis);
 
         this.layoutPersonalPref.setController(this);
         this.addExercis.setController(this);
@@ -43,7 +45,9 @@ public class Controller {
     }
 
     public void dataExercisInstruction(String category, String header, String repetition, String time, String instruction) {
-        DbHelper dbhelper = new DbHelper(mainActivity);
+        Log.i("", "text: " + "test");
+
+        DbHelper dbhelper = new DbHelper(addExercis);
         dbhelper.exercis(category, header, repetition, time, instruction);
     }
 }
