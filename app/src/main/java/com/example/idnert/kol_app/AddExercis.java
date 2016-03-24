@@ -75,14 +75,21 @@ public class AddExercis extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                Intent refresh = new Intent(this, MainActivity.class);
-                startActivity(refresh);
-                this.finish();
+            case R.id.action_main:
+                Intent main = new Intent(this, MainActivity.class);
+                startActivity(main);
                 return true;
             case R.id.action_exercis:
                 Intent exercis = new Intent(this, AddExercis.class);
                 startActivity(exercis);
+                return true;
+            case R.id.action_personalPref:
+                Intent personalPref = new Intent(this, PersonalPrefActivity.class);
+                startActivity(personalPref);
+                return true;
+            case R.id.action_listOfExercis:
+                Intent listOfExercis = new Intent(this, RecyclerViewActivity.class);
+                startActivity(listOfExercis);
                 return true;
         }
         return super.onOptionsItemSelected(item);

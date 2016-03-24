@@ -17,6 +17,10 @@ public class MainActivity extends Activity {
     private Exercis_details exercis_details;
     private PersonalPrefActivity pers_pref;
 
+    public MainActivity() {
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +52,16 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
        switch (item.getItemId()) {
-           case  R.id.action_settings:
+           /**case R.id.action_settings:
                Intent refresh= new Intent(this, MainActivity.class);
                startActivity(refresh);
                this.finish();
                return true;
+            **/
+           case R.id.action_main:
+           Intent main = new Intent(this, MainActivity.class);
+           startActivity(main);
+           return true;
            case R.id.action_exercis:
                Intent exercis = new Intent(this, AddExercis.class);
                startActivity(exercis);

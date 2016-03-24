@@ -2,11 +2,13 @@ package com.example.idnert.kol_app;
 
 import android.app.Activity;
 import android.content.Context;
+import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -32,6 +34,10 @@ public class PersonalPrefActivity extends Activity {
     private Button inputExercis;
     private RadioButton man;
     private RadioButton woman;
+
+    public PersonalPrefActivity() {
+        // Required empty public constructor
+    }
 
     public void setController(Controller controller) {
         this.controller = controller;
@@ -59,6 +65,31 @@ public class PersonalPrefActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+            case R.id.action_main:
+                Intent main = new Intent(this, MainActivity.class);
+                startActivity(main);
+                return true;
+            case R.id.action_exercis:
+                Intent exercis = new Intent(this, AddExercis.class);
+                startActivity(exercis);
+                return true;
+            case R.id.action_personalPref:
+                Intent personalPref = new Intent(this, PersonalPrefActivity.class);
+                startActivity(personalPref);
+                return true;
+            case R.id.action_listOfExercis:
+                Intent listOfExercis = new Intent(this, RecyclerViewActivity.class);
+                startActivity(listOfExercis);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -102,6 +133,8 @@ public class PersonalPrefActivity extends Activity {
     }
 
     private class addPersonalPref implements View.OnClickListener {
+        private Context activity;
+
         @Override
         public void onClick(View v) {
             String firstN = firstName.getText().toString();
@@ -113,8 +146,12 @@ public class PersonalPrefActivity extends Activity {
             Context context = getApplicationContext();
             DbHelper dbhelper = new DbHelper(context);
             dbhelper.exercis(firstN, lastN, persNo, sex, habit);
-            //Intent intent = new Intent(getActivity(), AddExercis.class);
+            //Intent intent = new Intent(this, MainActivity.class);
             //startActivity(intent);
+        }
+
+        public Context getActivity() {
+            return activity;
         }
 
         private String checkSex() {
