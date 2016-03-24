@@ -136,8 +136,6 @@ public class AddExercis extends Activity {
     }
 
     private class addExercis implements View.OnClickListener {
-
-
         @Override
         public void onClick(View v) {
             String text = mySpinner.getSelectedItem().toString();
@@ -160,8 +158,6 @@ public class AddExercis extends Activity {
             Toast.makeText(context,
                     "Tack, om du vill lägga in en ny övning så går det bra! Annars klicka på klar!", Toast.LENGTH_LONG).show();
         }
-
-
     }
 
     private class done implements View.OnClickListener {

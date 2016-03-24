@@ -46,7 +46,7 @@
             android:layout_alignBaseline="@+id/btnAddExercise"
             android:layout_alignBottom="@+id/btnAddExercise"
             android:layout_alignEnd="@+id/btnUserInformation"
-            android:id="@+id/button2"
+            android:id="@+id/btnStatistics"
             android:layout_weight="0.21" />
 
         <Button
