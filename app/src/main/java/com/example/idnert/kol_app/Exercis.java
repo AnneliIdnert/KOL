@@ -12,11 +12,10 @@ public class Exercis {
     private String repetition;
     private int image;
 
-    Exercis(String category, String header, String description, int image, String time, String repetition) {
+    Exercis(String category, String header, String description, String time, String repetition) {
         this.category = category;
         this.header = header;
         this.description = description;
-        this.image = image;
         this.time = time;
         this.repetition= repetition;
     }

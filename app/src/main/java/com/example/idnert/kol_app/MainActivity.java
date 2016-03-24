@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -141,7 +140,7 @@ public class MainActivity extends Activity {
     }
 
     public void startTraining(View view) {
-        Intent intent = new Intent(this, CardViewActivity.class);
+        Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
         Log.i(TAG, "You clicked Start training");
     }

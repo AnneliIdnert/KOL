@@ -2,6 +2,7 @@ package com.example.idnert.kol_app;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -73,14 +74,36 @@ public class DbHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_FIRST, header);
-        contentValues.put(COLUMN_LAST, instruction);
-        contentValues.put(COLUMN_PERSNUMBER, repetition);
-        contentValues.put(COLUMN_SEX, category);
-        contentValues.put(COLUMN_HABITS, time);
+        contentValues.put(COLUMN_HEADER, header);
+        contentValues.put(COLUMN_DESCRIPTION, instruction);
+        contentValues.put(COLUMN_REPETITION, repetition);
+        contentValues.put(COLUMN_CATEGORY, category);
+        contentValues.put(COLUMN_TIME, time);
 
         db.insert(TABLE_NAME, null, contentValues);
         Log.d("AI", db.toString());
+    }
+    public Exercis [] getExercis(){
+        int category, header, repetition, time, instruction;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM EXERCIS ", null);
+
+        Exercis [] exercis = new Exercis[cursor.getCount()];
+        category = cursor.getColumnIndex(COLUMN_CATEGORY);
+        header = cursor.getColumnIndex(COLUMN_HEADER);
+        repetition = cursor.getColumnIndex(COLUMN_REPETITION);
+        time = cursor.getColumnIndex(COLUMN_TIME);
+        instruction = cursor.getColumnIndex(COLUMN_DESCRIPTION);
+        for (int i =0; i<exercis.length; i++){
+            cursor.moveToPosition(i);
+            exercis[i] = new Exercis(cursor.getString(category),
+                    cursor.getString(header),
+                    cursor.getString(repetition),
+                    cursor.getString(time),
+                    cursor.getString(instruction));
+            Log.d("Get exercis ", "exercis queri");
+        }
+        return exercis;
     }
 
     @Override
