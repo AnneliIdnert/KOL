@@ -10,7 +10,6 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity {
     private Controller controller;
-    private LayoutPersonalPref layoutPersonalPref;
     private FragmentManager fm;
     private FragmentTransaction ft;
     private AddExercis addExercis;
@@ -23,7 +22,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //layoutPersonalPref = new LayoutPersonalPref();
         addExercis = new AddExercis();
         exercis_details = new Exercis_details();
         pers_pref = new PersonalPrefActivity();
@@ -70,11 +68,5 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void setFragment(LayoutPersonalPref personalPref) {
-        ft = fm.beginTransaction();
-        ft.replace(R.id.content, personalPref);
-        ft.commit();
     }
 }

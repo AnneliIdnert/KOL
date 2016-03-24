@@ -59,7 +59,7 @@ public class Exercis_details extends Activity {
                 startActivity(cardview);
                 return true;
             case R.id.action_personalPref:
-                Intent personalPref = new Intent(this, LayoutPersonalPref.class);
+                Intent personalPref = new Intent(this, PersonalPrefActivity.class);
                 startActivity(personalPref);
                 return true;
             case R.id.action_listOfExercis:
