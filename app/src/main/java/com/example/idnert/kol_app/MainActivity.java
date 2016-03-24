@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
     private DbHelper dbHelper;
     private Exercis_details exercis_details;
     private PersonalPrefActivity pers_pref;
+    private StatisticActivity statisticActivity;
     private static final String TAG = "MainActivity";
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -43,6 +44,7 @@ public class MainActivity extends Activity {
         addExercis = new AddExercis();
         exercis_details = new Exercis_details();
         pers_pref = new PersonalPrefActivity();
+        statisticActivity = new StatisticActivity();
 
         controller = new Controller(this, addExercis, exercis_details, pers_pref);
 
@@ -83,6 +85,10 @@ public class MainActivity extends Activity {
             case R.id.action_listOfExercis:
                 Intent listOfExercis = new Intent(this, RecyclerViewActivity.class);
                 startActivity(listOfExercis);
+                return true;
+            case R.id.action_statistics:
+                Intent statistics = new Intent(this, StatisticActivity.class);
+                startActivity(statistics);
                 return true;
         }
 
@@ -135,14 +141,14 @@ public class MainActivity extends Activity {
     }
 
     public void startTraining(View view) {
-        //Intent intent = new Intent(this, <Class Name>.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, CardViewActivity.class);
+        startActivity(intent);
         Log.i(TAG, "You clicked Start training");
     }
 
     public void seeStatistics(View view) {
-        //Intent intent = new Intent(this, <Class Name>.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, StatisticActivity.class);
+        startActivity(intent);
         Log.i(TAG, "You clicked See Statistics");
     }
 

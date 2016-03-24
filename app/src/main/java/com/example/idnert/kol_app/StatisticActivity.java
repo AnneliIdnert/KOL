@@ -1,43 +1,23 @@
 package com.example.idnert.kol_app;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class AddExercis extends Activity {
-
-    Controller controller;
-    CardViewActivity kol_exercis;
-    MainActivity mainActivity;
-    private Spinner mySpinner;
-    private EditText choice;
-    private EditText header;
-    private EditText howMany;
-    private EditText time;
-    private EditText instruction;
-    private Button save;
-    private Button finish;
-
-    private static final String TAG = "AddExercise";
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+/**
+ * Created by annikamagnusson on 24/03/16.
+ *
+ */
+public class StatisticActivity extends Activity {
     private GoogleApiClient client;
+    private Controller controller;
 
     public void setController(Controller controller) {
         this.controller = controller;
@@ -46,20 +26,8 @@ public class AddExercis extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add__exercis);
+        setContentView(R.layout.activity_statistics);
 
-        mySpinner = (Spinner) findViewById(R.id.chooseCategory);
-        //choice = (EditText)mySpinner.getSelectedItem();
-        header = (EditText) findViewById(R.id.edHeader);
-        howMany = (EditText) findViewById(R.id.edRepitions);
-        time = (EditText) findViewById(R.id.edTime);
-        instruction = (EditText) findViewById(R.id.edInstruction);
-        save = (Button) findViewById(R.id.btnSave);
-        save.setOnClickListener(new addExercis());
-        finish = (Button) findViewById(R.id.btnFinish);
-        finish.setOnClickListener(new done());
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -69,7 +37,6 @@ public class AddExercis extends Activity {
         return true;
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -137,38 +104,5 @@ public class AddExercis extends Activity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
-    }
-
-    private class addExercis implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            String text = mySpinner.getSelectedItem().toString();
-            String inputHeader = header.getText().toString();
-            String repetition = howMany.getText().toString();
-            String getTime = time.getText().toString();
-            String getInstruction = instruction.getText().toString();
-
-            Log.i(TAG, "text: " + text);
-            Log.i(TAG, "header: " + inputHeader);
-            Log.i(TAG, "repetition: " + repetition);
-            Log.i(TAG, "time: " + getTime);
-            Log.i(TAG, "instruction: " + getInstruction);
-
-            Context context = getApplicationContext();
-            DbHelper dbhelper = new DbHelper(context);
-            dbhelper.exercis(text, inputHeader, repetition, getTime, getInstruction);
-
-
-            Toast.makeText(context,
-                    "Tack, om du vill lägga in en ny övning så går det bra! Annars klicka på klar!", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private class done implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            //Intent intent = new Intent(this, kol_exercis.class);
-            //  startActivity(intent);
-        }
     }
 }

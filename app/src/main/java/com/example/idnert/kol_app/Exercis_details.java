@@ -66,6 +66,10 @@ public class Exercis_details extends Activity {
                 Intent listOfExercis = new Intent(this, RecyclerViewActivity.class);
                 startActivity(listOfExercis);
                 return true;
+            case R.id.action_statistics:
+                Intent statistics = new Intent(this, StatisticActivity.class);
+                startActivity(statistics);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
