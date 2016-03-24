@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
     private AddExercis addExercis;
     private DbHelper dbHelper;
     private Exercis_details exercis_details;
+    private PersonalPrefActivity pers_pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
         layoutPersonalPref = new LayoutPersonalPref();
         addExercis = new AddExercis();
         exercis_details = new Exercis_details();
+        pers_pref = new PersonalPrefActivity();
 
         controller = new Controller(this, layoutPersonalPref, addExercis,exercis_details );
 
@@ -57,7 +59,7 @@ public class MainActivity extends Activity {
                startActivity(exercis);
                return true;
            case R.id.action_personalPref:
-               Intent personalPref = new Intent(this, LayoutPersonalPref.class);
+               Intent personalPref = new Intent(this, PersonalPrefActivity.class);
                startActivity(personalPref);
                return true;
            case R.id.action_listOfExercis:

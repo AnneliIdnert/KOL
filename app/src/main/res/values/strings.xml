@@ -16,7 +16,7 @@
     <string name="saveExercis">Spar</string>
     <string name="finish">Klar!</string>
 
-    <string name="personalPref">Användar info</string>
+    <string name="personalPref">Användarinfo</string>
     <string name="exercisesInput">Träningsformulär</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -25,4 +25,5 @@
     <string name="inputHeader">Skriv in rubrik</string>
     <string name="categoryHeader">Välj kategori</string>
     <string name="title_activity_exercis_details">Utförande av övning</string>
+    <string name="title_activity_personal_pref">Användarinformation</string>
 </resources>
