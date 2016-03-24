@@ -24,7 +24,16 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:text="Börja Träna"
+            android:id="@+id/btnExercise"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/btnAddExercise"
+            android:layout_weight="0.36" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
             android:text="Lägg till träning"
             android:id="@+id/btnAddExercise"
             android:layout_below="@+id/btnUserInformation"
@@ -48,15 +57,6 @@
             android:layout_alignEnd="@+id/btnUserInformation"
             android:id="@+id/btnStatistics"
             android:layout_weight="0.21" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Börja Träna"
-            android:id="@+id/btnExercise"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/btnAddExercise"
-            android:layout_weight="0.18" />
 
     </LinearLayout>
 </RelativeLayout>

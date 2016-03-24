@@ -49,34 +49,6 @@ public class MainActivity extends Activity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-
-        final Button startExercise = (Button) findViewById(R.id.btnExercise);
-        startExercise.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked Start Exercise");
-            }
-        });
-
-        final Button statistics = (Button) findViewById(R.id.btnStatistics);
-        statistics.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked Statistics");
-            }
-        });
-
-        final Button userInformation = (Button) findViewById(R.id.btnUserInformation);
-        userInformation.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked User Information");
-            }
-        });
-
-        final Button addExercise = (Button) findViewById(R.id.btnAddExercise);
-        addExercise.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked Add Exercise");
-            }
-        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -135,6 +107,34 @@ public class MainActivity extends Activity {
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.start(client, viewAction);
+
+        final Button startExercise = (Button) findViewById(R.id.btnExercise);
+        startExercise.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(TAG, "You clicked Start Exercise");
+            }
+        });
+
+        final Button statistics = (Button) findViewById(R.id.btnStatistics);
+        statistics.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(TAG, "You clicked Statistics");
+            }
+        });
+
+        final Button userInformation = (Button) findViewById(R.id.btnUserInformation);
+        userInformation.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(TAG, "You clicked User Information");
+            }
+        });
+
+        final Button addExercise = (Button) findViewById(R.id.btnAddExercise);
+        addExercise.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(TAG, "You clicked Add Exercise");
+            }
+        });
     }
 
     @Override
