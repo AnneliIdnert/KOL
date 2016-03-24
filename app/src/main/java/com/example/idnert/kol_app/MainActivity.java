@@ -107,34 +107,6 @@ public class MainActivity extends Activity {
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.start(client, viewAction);
-
-        final Button startExercise = (Button) findViewById(R.id.btnExercise);
-        startExercise.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked Start Exercise");
-            }
-        });
-
-        final Button statistics = (Button) findViewById(R.id.btnStatistics);
-        statistics.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked Statistics");
-            }
-        });
-
-        final Button userInformation = (Button) findViewById(R.id.btnUserInformation);
-        userInformation.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked User Information");
-            }
-        });
-
-        final Button addExercise = (Button) findViewById(R.id.btnAddExercise);
-        addExercise.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i(TAG, "You clicked Add Exercise");
-            }
-        });
     }
 
     @Override
@@ -155,5 +127,27 @@ public class MainActivity extends Activity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+
+    public void addExercise(View view) {
+        Intent intent = new Intent(this, AddExercis.class);
+        startActivity(intent);
+    }
+
+    public void startTraining(View view) {
+        //Intent intent = new Intent(this, <Class Name>.class);
+        //startActivity(intent);
+        Log.i(TAG, "You clicked Start training");
+    }
+
+    public void seeStatistics(View view) {
+        //Intent intent = new Intent(this, <Class Name>.class);
+        //startActivity(intent);
+        Log.i(TAG, "You clicked See Statistics");
+    }
+
+    public void userInformation(View view) {
+        Intent intent = new Intent(this, PersonalPrefActivity.class);
+        startActivity(intent);
     }
 }

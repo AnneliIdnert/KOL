@@ -29,7 +29,8 @@
             android:id="@+id/btnExercise"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/btnAddExercise"
-            android:layout_weight="0.36" />
+            android:layout_weight="0.36"
+            android:onClick="startTraining"/>
 
         <Button
             android:layout_width="match_parent"
@@ -38,7 +39,8 @@
             android:id="@+id/btnAddExercise"
             android:layout_below="@+id/btnUserInformation"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="72dp" />
+            android:layout_marginTop="72dp"
+            android:onClick="addExercise"/>
 
         <Button
             android:layout_width="match_parent"
@@ -46,7 +48,8 @@
             android:text="Användarinfo"
             android:id="@+id/btnUserInformation"
             android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/btnAddExercise" />
+            android:layout_alignEnd="@+id/btnAddExercise"
+            android:onClick="userInformation"/>
 
         <Button
             android:layout_width="match_parent"
@@ -56,7 +59,8 @@
             android:layout_alignBottom="@+id/btnAddExercise"
             android:layout_alignEnd="@+id/btnUserInformation"
             android:id="@+id/btnStatistics"
-            android:layout_weight="0.21" />
+            android:layout_weight="0.21"
+            android:onClick="seeStatistics"/>
 
     </LinearLayout>
 </RelativeLayout>
