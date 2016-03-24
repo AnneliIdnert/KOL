@@ -23,19 +23,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        layoutPersonalPref = new LayoutPersonalPref();
+        //layoutPersonalPref = new LayoutPersonalPref();
         addExercis = new AddExercis();
         exercis_details = new Exercis_details();
         pers_pref = new PersonalPrefActivity();
 
-        controller = new Controller(this, layoutPersonalPref, addExercis,exercis_details );
+        controller = new Controller(this, addExercis, exercis_details, pers_pref);
 
-        fm = getFragmentManager();
+        /**fm = getFragmentManager();
         ft = fm.beginTransaction();
 
        if (savedInstanceState==null) {
            setFragment(layoutPersonalPref);
         }
+         **/
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

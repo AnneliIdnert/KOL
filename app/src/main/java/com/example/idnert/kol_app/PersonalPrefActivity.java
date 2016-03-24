@@ -14,6 +14,15 @@ import com.google.android.gms.common.api.GoogleApiClient;
  */
 public class PersonalPrefActivity extends Activity {
     private GoogleApiClient client;
+    private LayoutPersonalPref layout;
+
+    public PersonalPrefActivity() {
+        layout = new LayoutPersonalPref();
+    }
+
+    public void setController(Controller controller) {
+        this.layout.setController(controller);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

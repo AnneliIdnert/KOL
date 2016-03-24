@@ -12,24 +12,26 @@ public class Controller {
     MainActivity mainActivity;
     private LayoutPersonalPref layoutPersonalPref;
     private DbHelper dbHelper;
-     AddExercis addExercis;
+    AddExercis addExercis;
     private LinkedList<Exercis> showExcerises;
     private Exercis_details exercis_details;
+    PersonalPrefActivity personalPref;
 
     public Controller(Context context) {
         dbHelper = new DbHelper(context);
     }
 
-    public Controller(MainActivity mainActivity, LayoutPersonalPref layoutPersonalPref, AddExercis addExercis, Exercis_details exercis_details) {
-        this.layoutPersonalPref = layoutPersonalPref;
+    public Controller(MainActivity mainActivity, AddExercis addExercis, Exercis_details exercis_details,
+                      PersonalPrefActivity personalPref) {
         this.mainActivity = mainActivity;
         this.addExercis = addExercis;
         this.exercis_details = exercis_details;
+        this.personalPref = personalPref;
 
         dbHelper = new DbHelper(mainActivity);
         dbHelper = new DbHelper(addExercis);
 
-        this.layoutPersonalPref.setController(this);
+        this.personalPref.setController(this);
         this.addExercis.setController(this);
         this.exercis_details.setController(this);
     }
