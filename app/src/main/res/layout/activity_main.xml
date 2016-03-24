@@ -11,4 +11,52 @@
     android:id="@+id/content">
 
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:weightSum="1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"><![CDATA[>
+
+        ]]>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Lägg till träning"
+            android:id="@+id/btnAddExercise"
+            android:layout_below="@+id/btnUserInformation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:text="Användarinfo"
+            android:id="@+id/btnUserInformation"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/btnAddExercise" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se statistik"
+            android:layout_alignBaseline="@+id/btnAddExercise"
+            android:layout_alignBottom="@+id/btnAddExercise"
+            android:layout_alignEnd="@+id/btnUserInformation"
+            android:id="@+id/button2"
+            android:layout_weight="0.21" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Börja Träna"
+            android:id="@+id/btnExercise"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/btnAddExercise"
+            android:layout_weight="0.18" />
+
+    </LinearLayout>
 </RelativeLayout>
