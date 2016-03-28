@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
     private PersonalPrefActivity pers_pref;
     private StatisticActivity statisticActivity;
     private static final String TAG = "MainActivity";
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.

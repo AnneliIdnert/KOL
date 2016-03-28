@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by idnert on 2016-03-02.
  */
@@ -80,10 +83,10 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_CATEGORY, category);
         contentValues.put(COLUMN_TIME, time);
 
-        db.insert(TABLE_NAME, null, contentValues);
+        db.insert(TABLE_NAME_TWO, null, contentValues);
         Log.d("AI", db.toString());
     }
-    public Exercis [] getExercis(){
+  /**  public Exercis [] getExercis(){
         int category, header, repetition, time, instruction;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM EXERCIS ", null);
@@ -104,7 +107,25 @@ public class DbHelper extends SQLiteOpenHelper {
             Log.d("Get exercis ", "exercis queri");
         }
         return exercis;
-    }
+    }**/
+    public List<Exercis> getExercis(){
+        List<Exercis> exercises = new ArrayList<Exercis>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM" + TABLE_NAME_TWO, null);
+        cursor.moveToFirst();
+        do {
+            exercises.add(new Exercis(cursor.getInt(0),
+                                      cursor.getString(1),
+                                      cursor.getString(2),
+                                      cursor.getString(3),
+                                      cursor.getString(4),
+                                      cursor.getString(5)));
+        } while (cursor.moveToNext());
+
+    cursor.close();
+    return exercises;
+        }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

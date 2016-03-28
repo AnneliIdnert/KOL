@@ -19,6 +19,7 @@ public class Exercis_details extends Activity {
     private Button startTime;
     private Button startmusic;
     private Button finish;
+    private StatisticActivity statisticActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +28,21 @@ public class Exercis_details extends Activity {
 
         header =(TextView)findViewById(R.id.exercis_header);
         image = (ImageView)findViewById(R.id.exercis_image);
-        description = (TextView)findViewById(R.id.description);
+
+
         time = (TextView)findViewById(R.id.exercis_time);
+        time.setText("20 min");
         startTime = (Button)findViewById(R.id.btnTime);
         startTime.setOnClickListener(new timing());
         startmusic = (Button)findViewById(R.id.btnMusic);
         startmusic.setOnClickListener(new music());
         finish = (Button)findViewById(R.id.btnFinish);
-        finish.setOnClickListener(new done());
-    }
 
+    }
+    public void finich(View view) {
+        Intent intent = new Intent(this, StatisticActivity.class);
+        startActivity(intent);
+    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -92,10 +98,4 @@ public class Exercis_details extends Activity {
         }
     }
 
-    private class done implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            
-        }
-    }
 }

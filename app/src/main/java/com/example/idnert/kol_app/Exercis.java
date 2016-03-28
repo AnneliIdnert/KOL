@@ -11,8 +11,10 @@ public class Exercis {
     private String time;
     private String repetition;
     private int image;
+    private int id;
 
-    Exercis(String category, String header, String description, String time, String repetition) {
+  public   Exercis(int id, String category, String header, String description, String time, String repetition) {
+        this.id = id;
         this.category = category;
         this.header = header;
         this.description = description;
@@ -20,13 +22,16 @@ public class Exercis {
         this.repetition= repetition;
     }
 
-    Exercis(String header, String description, int image) {
+ public   Exercis(String header, String description, int image) {
         this.header = header;
         this.description = description;
         this.image = image;
     }
 
 
+    public int getId() {
+        return id;
+    }
     public String getCategory () {
         return category;
     }

@@ -2,15 +2,12 @@ package com.example.idnert.kol_app;
 
 import android.app.Activity;
 import android.content.Context;
-import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,7 +28,6 @@ public class PersonalPrefActivity extends Activity {
     private EditText lastName;
     private EditText personNo;
     private CheckBox smoking;
-    private Button inputExercis;
     private RadioButton man;
     private RadioButton woman;
 
@@ -149,9 +145,17 @@ public class PersonalPrefActivity extends Activity {
 //          Log.d("AI", controller.toString());
             Context context = getApplicationContext();
             DbHelper dbhelper = new DbHelper(context);
-            dbhelper.exercis(firstN, lastN, persNo, sex, habit);
-            //Intent intent = new Intent(this, MainActivity.class);
-            //startActivity(intent);
+            clearInput();
+            dbhelper.insertPersonalPref(firstN, lastN, persNo, sex, habit);
+            Intent intent = new Intent(getApplicationContext(), AddExercis.class);
+            startActivity(intent);
+        }
+        private void clearInput(){
+            firstName.setText("");
+            lastName.setText("");
+            personNo.setText("");
+
+
         }
 
         public Context getActivity() {

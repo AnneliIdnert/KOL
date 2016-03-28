@@ -16,26 +16,33 @@
             android:id="@+id/exercis_header"
             android:textSize="30sp"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"/>
+            android:layout_marginRight="16dp"
+            android:text="DANSA"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:textAlignment="center" />
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/exercis_image"
-            android:layout_below="@+id/exercis_header"
-            android:layout_marginRight="16dp"/>
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/test" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/exercis_decription"
-            android:layout_below="@+id/exercis_image"
-            android:layout_marginRight="16dp"/>
+            android:text="Ta en sväng om är aldrig fel! sätt på musik och rör dig i tackt med musiken. Lyft armarna och gunga med knäna! allt känns roligt med lite rörelse till musik"
+            android:layout_marginRight="16dp"
+            android:layout_alignBaseline="@+id/btnFinish"
+            android:layout_alignBottom="@+id/btnFinish"
+            android:layout_alignEnd="@+id/exercis_time" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMusic"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/exercis_decription"
-            android:text="Sätt på musik!"/>
+            android:text="Sätt på musik!"
+            android:layout_below="@+id/exercis_time"
+            android:layout_toEndOf="@+id/exercis_header" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,9 +56,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnTime"
-            android:layout_alignRight="@+id/exercis_time"
             android:text="Starta tid!"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/btnMusic"
+            android:layout_toEndOf="@+id/btnFinish" />
 
         <Button
             android:layout_width="wrap_content"
@@ -60,7 +68,9 @@
             android:text="Klar"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/btnMusic"
-            android:layout_marginBottom="43dp" />
+            android:layout_marginBottom="43dp"
+            android:clickable="false"
+            android:onClick="finich" />
 
     </RelativeLayout>
 

@@ -9,7 +9,8 @@ public class CardViewActivity extends Activity {
 
     private TextView header;
     private TextView description;
-    private   ImageView image;
+    private ImageView image;
+    private Controller controller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,7 @@ public class CardViewActivity extends Activity {
         header=(TextView)findViewById(R.id.exercis_header);
         description=(TextView)findViewById(R.id.description);
         image = (ImageView)findViewById(R.id.exercis_image);
+
 
         header.setText("TA EN PROMIS");
         description.setText("När du tar en promenad kan du lyssna till allt ljud runt dig...");

@@ -158,17 +158,22 @@ public class AddExercis extends Activity {
             DbHelper dbhelper = new DbHelper(context);
             dbhelper.exercis(text, inputHeader, repetition, getTime, getInstruction);
 
-
+            clearInput();
             Toast.makeText(context,
-                    "Tack, om du vill lägga in en ny övning så går det bra! Annars klicka på klar!", Toast.LENGTH_LONG).show();
+                    "Tack! om du vill lägga in en ny övning så går det bra! Annars klicka på klar!", Toast.LENGTH_LONG).show();
         }
     }
-
+    private  void clearInput(){
+        header.setText("");
+        howMany.setText("");
+        time.setText("");
+        instruction.setText("");
+    }
     private class done implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            //Intent intent = new Intent(this, kol_exercis.class);
-            //  startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+             startActivity(intent);
         }
     }
 }

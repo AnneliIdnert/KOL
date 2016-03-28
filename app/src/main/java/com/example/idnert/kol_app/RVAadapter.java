@@ -16,6 +16,7 @@ import java.util.List;
  * Created by idnert on 2016-03-18.
  */
 public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
+    private List<Exercis> exercises;
 
     public static class ExercisHolder extends RecyclerView.ViewHolder {
         private   CardView cardView;
@@ -24,6 +25,8 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
         private   ImageView image;
         private   Exercis_details exercis_details;
         private   Context context;
+
+
 
         ExercisHolder(final View itemView) {
             super(itemView);
@@ -38,10 +41,11 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
                     itemView.getContext().startActivity(new Intent(itemView.getContext(), Exercis_details.class));
                 }
             });
+
         }
     }
 
-    List<Exercis> exercises;
+
     RVAadapter(List<Exercis> exercises) {
         this.exercises = exercises;
     }
@@ -60,9 +64,10 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
 
     @Override
     public void onBindViewHolder(ExercisHolder exercisHolder, int i) {
-        exercisHolder.header.setText(exercises.get(i).getHeader());
-        exercisHolder.text.setText(exercises.get(i).getDescription());
-        exercisHolder.image.setImageResource(exercises.get(i).getImage());
+        Exercis ex = exercises.get(i);
+        exercisHolder.header.setText(ex.getHeader());
+        exercisHolder.text.setText(ex.getDescription());
+        exercisHolder.image.setImageResource(ex.getImage());
     }
 
     @Override

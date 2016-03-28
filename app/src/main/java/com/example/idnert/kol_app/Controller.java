@@ -3,16 +3,16 @@ package com.example.idnert.kol_app;
 import android.content.Context;
 import android.util.Log;
 
-import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by idnert on 2016-02-25.
  */
 public class Controller {
-    MainActivity mainActivity;
+    private MainActivity mainActivity;
     private DbHelper dbHelper;
-    AddExercis addExercis;
-    private LinkedList<Exercis> showExcerises;
+    private AddExercis addExercis;
+    private List<Exercis> showExcerises;
     private Exercis_details exercis_details;
     PersonalPrefActivity personalPref;
 
@@ -47,4 +47,10 @@ public class Controller {
         DbHelper dbhelper = new DbHelper(addExercis);
         dbhelper.exercis(category, header, repetition, time, instruction);
     }
+
+    public List<Exercis> getExercis(){
+
+        showExcerises = dbHelper.getExercis();
+        return  showExcerises;
+    };
 }
