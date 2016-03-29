@@ -44,7 +44,7 @@ public class RecyclerViewActivity extends Activity {
         String Category= exercises2.get(0).getCategory();
         String Description= exercises2.get(0).getDescription();
         String Header= exercises2.get(0).getHeader();
-       // Log.i(TAG, "text: " + text);
+      Log.i("From db 0", Category+" "+Description+" "+Header);
 
         dbhelper.close();
 
