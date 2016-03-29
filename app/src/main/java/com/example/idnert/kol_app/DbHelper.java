@@ -109,9 +109,10 @@ public class DbHelper extends SQLiteOpenHelper {
         return exercis;
     }**/
     public List<Exercis> getExercis(){
+
         List<Exercis> exercises = new ArrayList<Exercis>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM" + TABLE_NAME_TWO, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME_TWO, null);
         cursor.moveToFirst();
         do {
             exercises.add(new Exercis(cursor.getInt(0),
