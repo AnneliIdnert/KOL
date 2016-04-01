@@ -157,7 +157,7 @@ public class AddExercis extends Activity {
             Context context = getApplicationContext();
             DbHelper dbhelper = new DbHelper(context);
             dbhelper.exercis(text, inputHeader, repetition, getTime, getInstruction);
-
+            dbhelper.close();
             clearInput();
             Toast.makeText(context,
                     "Tack! om du vill lägga in en ny övning så går det bra! Annars klicka på klar!", Toast.LENGTH_LONG).show();

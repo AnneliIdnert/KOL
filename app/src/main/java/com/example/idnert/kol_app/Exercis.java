@@ -25,7 +25,7 @@ public class Exercis {
  public   Exercis(String header, String description, int image) {
         this.header = header;
         this.description = description;
-        this.image = image;
+        this.image=image;
     }
 
 

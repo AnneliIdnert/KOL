@@ -38,6 +38,7 @@ public class RVAadapter extends RecyclerView.Adapter<RVAadapter.ExercisHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //get listview position kolla!
                     itemView.getContext().startActivity(new Intent(itemView.getContext(), Exercis_details.class));
                 }
             });

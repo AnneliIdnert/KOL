@@ -25,42 +25,57 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Börja Träna"
+            android:text="BÖRJA TRÄNA"
             android:id="@+id/btnExercise"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/btnAddExercise"
             android:layout_weight="0.36"
-            android:onClick="startTraining"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="77dp"
-            android:text="Lägg till träning"
-            android:id="@+id/btnAddExercise"
-            android:layout_below="@+id/btnUserInformation"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="72dp"
-            android:onClick="addExercise"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="82dp"
-            android:text="Användarinfo"
-            android:id="@+id/btnUserInformation"
-            android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/btnAddExercise"
-            android:onClick="userInformation"/>
-
+            android:onClick="startTraining"
+            android:textColor="#ffffff"
+            android:background="#0abb9d"
+            android:textStyle="bold" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Se statistik"
+            android:text="SE STATISTIK"
             android:layout_alignBaseline="@+id/btnAddExercise"
             android:layout_alignBottom="@+id/btnAddExercise"
             android:layout_alignEnd="@+id/btnUserInformation"
             android:id="@+id/btnStatistics"
             android:layout_weight="0.21"
-            android:onClick="seeStatistics"/>
+            android:onClick="seeStatistics"
+            android:background="#870578"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_marginTop="5dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:text="LÄGG TILL TRÄNING"
+            android:id="@+id/btnAddExercise"
+            android:layout_below="@+id/btnUserInformation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp"
+            android:onClick="addExercise"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="#5c8a30" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:text="ANVÄNDARINFO"
+            android:id="@+id/btnUserInformation"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/btnAddExercise"
+            android:onClick="userInformation"
+            android:background="#de6807"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp" />
+
+
 
     </LinearLayout>
 </RelativeLayout>

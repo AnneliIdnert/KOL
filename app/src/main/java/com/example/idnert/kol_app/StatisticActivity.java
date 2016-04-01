@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -18,6 +20,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class StatisticActivity extends Activity {
     private GoogleApiClient client;
     private Controller controller;
+    private Button back;
 
     public void setController(Controller controller) {
         this.controller = controller;
@@ -29,6 +32,8 @@ public class StatisticActivity extends Activity {
         setContentView(R.layout.activity_statistics);
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        back = (Button)findViewById(R.id.btnbackStat);
+        back.setOnClickListener(new backToMain());
     }
 
 
@@ -104,5 +109,13 @@ public class StatisticActivity extends Activity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+
+    private class backToMain implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        }
     }
 }
