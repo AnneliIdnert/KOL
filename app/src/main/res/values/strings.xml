@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Träning</string>
+    <string name="app_name">KOL-appen</string>
     <string name="welcome">Välkommen!</string>
     <string name="firstname">Förnamn</string>
     <string name="familyname">Efternamn</string>
