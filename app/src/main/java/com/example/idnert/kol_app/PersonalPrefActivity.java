@@ -147,7 +147,7 @@ public class PersonalPrefActivity extends Activity {
             DbHelper dbhelper = new DbHelper(context);
             clearInput();
             dbhelper.insertPersonalPref(firstN, lastN, persNo, sex, habit);
-            Intent intent = new Intent(getApplicationContext(), AddExercis.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
         private void clearInput(){
