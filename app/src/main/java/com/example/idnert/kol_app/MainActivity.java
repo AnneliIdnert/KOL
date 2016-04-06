@@ -25,11 +25,6 @@ public class MainActivity extends Activity {
     private PersonalPrefActivity pers_pref;
     private StatisticActivity statisticActivity;
     private static final String TAG = "MainActivity";
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
     private GoogleApiClient client;
 
     public MainActivity() {
@@ -48,8 +43,6 @@ public class MainActivity extends Activity {
 
         controller = new Controller(this, addExercis, exercis_details, pers_pref);
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -60,16 +53,9 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         switch (item.getItemId()) {
-            /**case R.id.action_settings:
-             Intent refresh= new Intent(this, MainActivity.class);
-             startActivity(refresh);
-             this.finish();
-             return true;
-             **/
+
             case R.id.action_main:
                 Intent main = new Intent(this, MainActivity.class);
                 startActivity(main);
@@ -99,17 +85,11 @@ public class MainActivity extends Activity {
     public void onStart() {
         super.onStart();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
+                Action.TYPE_VIEW,
+                "Main Page",
                 Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.start(client, viewAction);
@@ -119,16 +99,11 @@ public class MainActivity extends Activity {
     public void onStop() {
         super.onStop();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+
         Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
+                Action.TYPE_VIEW,
+                "Main Page",
                 Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.end(client, viewAction);

@@ -33,10 +33,7 @@ public class AddExercis extends Activity {
     private Button finish;
 
     private static final String TAG = "AddExercise";
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+
     private GoogleApiClient client;
 
     public void setController(Controller controller) {
@@ -58,8 +55,7 @@ public class AddExercis extends Activity {
         save.setOnClickListener(new addExercis());
         finish = (Button) findViewById(R.id.btnFinish);
         finish.setOnClickListener(new done());
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -71,9 +67,7 @@ public class AddExercis extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         switch (item.getItemId()) {
             case R.id.action_main:
                 Intent main = new Intent(this, MainActivity.class);
@@ -123,16 +117,12 @@ public class AddExercis extends Activity {
     public void onStop() {
         super.onStop();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+
         Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "AddExercis Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
+                Action.TYPE_VIEW,
+                "AddExercis Page",
+
                 Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.end(client, viewAction);

@@ -32,10 +32,6 @@ public class Exercis_details extends Activity {
     private Button startmusic;
     private Button finish;
     private StatisticActivity statisticActivity;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
     private GoogleApiClient client;
 
     @Override
@@ -53,9 +49,6 @@ public class Exercis_details extends Activity {
         startmusic.setOnClickListener(new music());
         finish = (Button) findViewById(R.id.btnFinish);
         finish.setOnClickListener(new done());
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -71,9 +64,7 @@ public class Exercis_details extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         switch (item.getItemId()) {
             case R.id.action_settings:
                 Intent refresh = new Intent(this, MainActivity.class);
@@ -108,17 +99,11 @@ public class Exercis_details extends Activity {
     public void onStart() {
         super.onStart();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Exercis_details Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
+                Action.TYPE_VIEW,
+                "Exercis_details Page",
                 Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.start(client, viewAction);
@@ -128,16 +113,10 @@ public class Exercis_details extends Activity {
     public void onStop() {
         super.onStop();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Exercis_details Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
+                Action.TYPE_VIEW,
+                "Exercis_details Page",
                 Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
                 Uri.parse("android-app://com.example.idnert.kol_app/http/host/path")
         );
         AppIndex.AppIndexApi.end(client, viewAction);
@@ -166,13 +145,6 @@ public class Exercis_details extends Activity {
             Context context = getApplicationContext();
             Toast.makeText(context,
                     "Här sätts musiken  på, ej implementerad!", Toast.LENGTH_LONG).show();
-
-          /**  Intent intent = new Intent();
-            intent.setAction(android.content.Intent.ACTION_VIEW);
-            File file = new File("Music/Elvis_Presley-Suspicious_Minds.mp3");
-            intent.setPackage("com.google.android.music");
-            intent.setDataAndType(Uri.fromFile(file), "audio/*");
-            context.startActivity(intent);**/
             Intent intent = new Intent("android.intent.action.MUSIC_PLAYER");
             startActivity(intent);
         }

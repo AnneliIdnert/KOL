@@ -86,28 +86,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME_TWO, null, contentValues);
         Log.d("AI", db.toString());
     }
-  /**  public Exercis [] getExercis(){
-        int category, header, repetition, time, instruction;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM EXERCIS ", null);
 
-        Exercis [] exercis = new Exercis[cursor.getCount()];
-        category = cursor.getColumnIndex(COLUMN_CATEGORY);
-        header = cursor.getColumnIndex(COLUMN_HEADER);
-        repetition = cursor.getColumnIndex(COLUMN_REPETITION);
-        time = cursor.getColumnIndex(COLUMN_TIME);
-        instruction = cursor.getColumnIndex(COLUMN_DESCRIPTION);
-        for (int i =0; i<exercis.length; i++){
-            cursor.moveToPosition(i);
-            exercis[i] = new Exercis(cursor.getString(category),
-                    cursor.getString(header),
-                    cursor.getString(repetition),
-                    cursor.getString(time),
-                    cursor.getString(instruction));
-            Log.d("Get exercis ", "exercis queri");
-        }
-        return exercis;
-    }**/
     public List<Exercis> getExercis(){
         List<Exercis> exercises = new ArrayList<Exercis>();
         SQLiteDatabase db = this.getReadableDatabase();

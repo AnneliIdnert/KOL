@@ -33,35 +33,6 @@ public class RecyclerViewActivity extends Activity {
     private void initializeData() {
 
 
-
-      /**  Context context = getApplicationContext();
-      //  DbHelper dbhelper = new DbHelper(context);
-
-       List<Exercis> exercises2= dbhelper.getExercis();
-
-
-
-      //  String Category= exercises2.get(0).getCategory();
-        String Description= exercises2.get(0).getDescription();
-        String Header= exercises2.get(0).getHeader();
-
-       // Log.i("From db 0", Category + " " + Description + " " + Header + "" + exercises2.size());
-
-    //    dbhelper.close();
-//Så här gör du:
-        exercises = new ArrayList<>();
-        int size= exercises2.size();
-
-        for(int l=0; l<size; l++){
-      // for(int i = 0; 0 < size; i++){
-           exercises.add(new Exercis(exercises2.get(l).getCategory(), exercises2.get(l).getHeader()));
-           Log.i("From db 0", exercises2.get(l).getCategory() + " " + exercises2.get(l).getHeader()+ " " + exercises2.size());
-             exercises.add(new Exercis("Meditation", "En lugn och stilla minut för att öka närvaron"));
-            exercises.add(new Exercis("Promenad", "en mysig promenad, lyssna till det som händer runt dig..."));
-
-
-        }**/
-
         exercises = new ArrayList<>();
 
         exercises.add(new Exercis("Promenad", "en mysig promenad, lyssna till det som händer runt dig, en promenad 30 min", R.drawable.walk));
